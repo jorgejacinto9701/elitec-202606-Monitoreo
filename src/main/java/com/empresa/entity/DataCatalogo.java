@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,6 +23,7 @@ public class DataCatalogo implements Serializable {
     @Column(name = "descripcion", columnDefinition = "TEXT")
     private String descripcion;
 
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idCatalogo", nullable = false)
     private Catalogo catalogo;

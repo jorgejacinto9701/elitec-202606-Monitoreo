@@ -5,6 +5,8 @@ import lombok.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -28,6 +30,7 @@ public class Producto implements Serializable {
     @Column(name = "stock", nullable = false)
     private Integer stock;
 
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idCategoria", nullable = false)
     private DataCatalogo categoria;
