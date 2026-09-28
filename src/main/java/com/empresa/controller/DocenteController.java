@@ -14,7 +14,7 @@ import com.empresa.service.DocenteService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/url/docente")
+@RequestMapping("/api/docente")
 @RequiredArgsConstructor
 public class DocenteController {
 

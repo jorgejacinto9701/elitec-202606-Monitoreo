@@ -32,7 +32,4 @@ public class Producto implements Serializable {
     @JoinColumn(name = "idCategoria", nullable = false)
     private DataCatalogo categoria;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idProveedor", nullable = false)
-    private Proveedor proveedor;
 }

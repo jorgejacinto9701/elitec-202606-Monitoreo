@@ -19,7 +19,7 @@ import com.empresa.util.AppSettings;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/url/util")
+@RequestMapping("/api/util")
 @RequiredArgsConstructor
 public class UtilController {
 

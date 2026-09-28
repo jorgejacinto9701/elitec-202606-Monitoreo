@@ -21,7 +21,7 @@ import com.empresa.service.ModalidadService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/url/modalidad")
+@RequestMapping("/api/modalidad")
 @RequiredArgsConstructor
 public class ModalidadController {
 

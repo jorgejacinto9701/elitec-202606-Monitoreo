@@ -27,7 +27,7 @@ import com.empresa.service.ProveedorService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/url/proveedor")
+@RequestMapping("/api/proveedor")
 @RequiredArgsConstructor
 public class ProveedorController {
 

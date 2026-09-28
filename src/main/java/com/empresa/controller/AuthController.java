@@ -22,7 +22,7 @@ import lombok.extern.apachecommons.CommonsLog;
 
 @CommonsLog
 @RestController
-@RequestMapping("/url/auth")
+@RequestMapping("/api/auth")
 @RequiredArgsConstructor
 public class AuthController {
 

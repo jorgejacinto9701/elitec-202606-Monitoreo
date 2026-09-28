@@ -18,7 +18,7 @@ import com.empresa.service.PlatoService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/url/plato")
+@RequestMapping("/api/plato")
 @RequiredArgsConstructor
 public class PlatoController {
 

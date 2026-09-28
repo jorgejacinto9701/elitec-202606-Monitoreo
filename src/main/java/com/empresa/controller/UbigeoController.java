@@ -13,7 +13,7 @@ import com.empresa.service.UbigeoService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/url/ubigeo")
+@RequestMapping("/api/ubigeo")
 @RequiredArgsConstructor
 public class UbigeoController {
 
