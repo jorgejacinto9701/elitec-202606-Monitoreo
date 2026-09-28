@@ -21,9 +21,6 @@ public class DataCatalogo implements Serializable {
     @Column(name = "descripcion", columnDefinition = "TEXT")
     private String descripcion;
 
-    @Column(name = "estado", length = 45)
-    private String estado;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idCatalogo", nullable = false)
     private Catalogo catalogo;

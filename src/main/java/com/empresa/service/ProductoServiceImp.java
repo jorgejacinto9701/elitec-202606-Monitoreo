@@ -3,17 +3,18 @@ package com.empresa.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.empresa.entity.Producto;
 import com.empresa.repository.ProductoRepository;
 
+import lombok.RequiredArgsConstructor;
+
 @Service	
+@RequiredArgsConstructor
 public class ProductoServiceImp implements ProductoService{
 
-	@Autowired
-	private ProductoRepository repository;
+	private final  ProductoRepository repository;
 	
 	@Override
 	public List<Producto> listarTodos() {

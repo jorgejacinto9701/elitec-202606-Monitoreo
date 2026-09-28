@@ -1,20 +1,21 @@
 package com.empresa.service;
 
-import com.empresa.entity.Proveedor;
 import java.util.List;
-import java.util.Optional;
+
+import com.empresa.dto.ProveedorEstadoDTO;
+import com.empresa.dto.ProveedorMesDTO;
+import com.empresa.dto.ProveedorPaisDTO;
+import com.empresa.dto.ProveedorTipoDTO;
+import com.empresa.entity.Proveedor;
 
 public interface ProveedorService {
 
-    // Operaciones CRUD
-    List<Proveedor> listarTodos();
-    Optional<Proveedor> buscarPorId(Integer id);
-    Proveedor guardar(Proveedor proveedor);
-    Proveedor actualizar(Integer id, Proveedor proveedor);
-    void eliminar(Integer id);
-
-    // Consultas específicas por teléfono
-    List<Proveedor> buscarPorTelefonoQueryMethod(String telefono);
-    List<Proveedor> buscarPorTelefonoJPQL(String telefono);
-    List<Proveedor> buscarPorTelefonoNative(String telefono);
+    public abstract List<Proveedor> listaTodos();
+    public abstract Proveedor insertaProveedor(Proveedor obj);
+    public abstract List<Proveedor> consultaDinamica(String nombre, String dni, int pais, int tipo, int estado);
+    public abstract void eliminaProveedor(int idProveedor);
+    public abstract List<ProveedorPaisDTO> cantidadPorPais();
+    public abstract List<ProveedorEstadoDTO> cantidadPorEstado();
+    public abstract List<ProveedorTipoDTO> cantidadPorTipo();
+    public abstract List<ProveedorMesDTO> cantidadPorMes();
 }

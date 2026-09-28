@@ -28,6 +28,14 @@ public class Usuario {
 	private LocalDateTime fechaRegistro;
 	private LocalDate fechaNacimiento;
 	private String direccion;
+	
+	public String getNombreCompleto() {
+		if (nombres != null && apellidos != null) {
+			return nombres.concat(" ").concat(apellidos);	
+		}else {
+			return ""; 
+		}
+	}
 }
 
 

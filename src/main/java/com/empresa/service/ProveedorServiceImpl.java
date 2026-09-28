@@ -1,62 +1,63 @@
 package com.empresa.service;
 
 import java.util.List;
-import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.empresa.dto.ProveedorEstadoDTO;
+import com.empresa.dto.ProveedorMesDTO;
+import com.empresa.dto.ProveedorPaisDTO;
+import com.empresa.dto.ProveedorTipoDTO;
 import com.empresa.entity.Proveedor;
 import com.empresa.repository.ProveedorRepository;
 
+import lombok.RequiredArgsConstructor;
 @Service
-public class ProveedorServiceImpl implements ProveedorService {
+@RequiredArgsConstructor
+public class ProveedorServiceImpl implements ProveedorService{
 
-    @Autowired
-    private ProveedorRepository proveedorRepository;
+
+    private final ProveedorRepository repository;
 
     @Override
-    public List<Proveedor> listarTodos() {
-        return proveedorRepository.findAll();
+    public List<Proveedor> listaTodos() {
+        return repository.findAll();
     }
 
     @Override
-    public Optional<Proveedor> buscarPorId(Integer id) {
-        return proveedorRepository.findById(id);
+    public Proveedor insertaProveedor(Proveedor obj) {
+        return repository.save(obj);
     }
 
     @Override
-    public Proveedor guardar(Proveedor proveedor) {
-        return proveedorRepository.save(proveedor);
+    public List<Proveedor> consultaDinamica(String nombre, String dni, int pais, int tipo, int estado) {
+        return repository.consultaDinamica(nombre, dni, pais,  tipo, estado);
     }
 
     @Override
-    public Proveedor actualizar(Integer id, Proveedor proveedorDetails) {
-        return proveedorRepository.findById(id).map(proveedor -> {
-            proveedor.setRazonSocial(proveedorDetails.getRazonSocial());
-            proveedor.setTelefono(proveedorDetails.getTelefono());
-            proveedor.setEmail(proveedorDetails.getEmail());
-            return proveedorRepository.save(proveedor);
-        }).orElseThrow(() -> new RuntimeException("Proveedor no encontrado con ID: " + id));
+    public void eliminaProveedor(int idProveedor) {
+        repository.deleteById(idProveedor);
     }
 
     @Override
-    public void eliminar(Integer id) {
-        proveedorRepository.deleteById(id);
+    public List<ProveedorPaisDTO> cantidadPorPais() {
+        return repository.cantidadPorPais();
     }
 
     @Override
-    public List<Proveedor> buscarPorTelefonoQueryMethod(String telefono) {
-        return proveedorRepository.findByTelefono(telefono);
+    public List<ProveedorEstadoDTO> cantidadPorEstado() {
+        return repository.cantidadPorEstado();
     }
 
     @Override
-    public List<Proveedor> buscarPorTelefonoJPQL(String telefono) {
-        return proveedorRepository.buscarPorTelefonoJPQL(telefono);
+    public List<ProveedorTipoDTO> cantidadPorTipo() {
+        return repository.cantidadPorTipo();
     }
 
     @Override
-    public List<Proveedor> buscarPorTelefonoNative(String telefono) {
-        return proveedorRepository.buscarPorTelefonoNative(telefono);
+    public List<ProveedorMesDTO> cantidadPorMes() {
+        return repository.cantidadPorMes();
     }
+
+
 }

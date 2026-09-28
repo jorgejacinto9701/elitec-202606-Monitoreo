@@ -1,73 +1,116 @@
 package com.empresa.controller;
 
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.empresa.dto.ProveedorEstadoDTO;
+import com.empresa.dto.ProveedorMesDTO;
+import com.empresa.dto.ProveedorPaisDTO;
+import com.empresa.dto.ProveedorTipoDTO;
 import com.empresa.entity.Proveedor;
 import com.empresa.service.ProveedorService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/api/proveedores")
+@RequestMapping("/url/proveedor")
+@RequiredArgsConstructor
 public class ProveedorController {
 
-    @Autowired
-    private ProveedorService proveedorService;
+    private final ProveedorService proveedorService;
 
-    // GET: Listar todos
     @GetMapping
-    public ResponseEntity<List<Proveedor>> listar() {
-        return ResponseEntity.ok(proveedorService.listarTodos());
+    public ResponseEntity<List<Proveedor>> listaTodosProveedor(){
+        List<Proveedor> lista = proveedorService.listaTodos();
+        return ResponseEntity.ok(lista);
     }
 
-    // GET: Buscar por ID
-    @GetMapping("/{id}")
-    public ResponseEntity<Proveedor> buscarPorId(@PathVariable Integer id) {
-        return proveedorService.buscarPorId(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    @PostMapping()
+    public ResponseEntity<?> registro(@RequestBody Proveedor obj){
+        HashMap<String, Object> salida = new HashMap<>();
+        obj.setIdProveedor(0);
+        obj.setFechaRegistro(LocalDateTime.now());
+        obj.setFechaActualizacion(LocalDateTime.now());
+        obj.setEstado(1);
+        Proveedor objSalida = proveedorService.insertaProveedor(obj);
+        salida.put("mensaje", "Proveedor registrado exitosamente de ID >>>> " + objSalida.getIdProveedor());
+        return ResponseEntity.ok(salida);
     }
 
-    // POST: Crear nuevo
-    @PostMapping
-    public ResponseEntity<Proveedor> guardar(@RequestBody Proveedor proveedor) {
-        return new ResponseEntity<>(proveedorService.guardar(proveedor), HttpStatus.CREATED);
+    @GetMapping("/consultaDinamica")
+    public ResponseEntity<List<Proveedor>> consulta(
+            @RequestParam(name = "nombre", required = true , defaultValue = "") String vnombre,
+            @RequestParam(name = "dni", required = false , defaultValue = "-1") String vdni,
+            @RequestParam(name = "pais", required = false , defaultValue = "-1") int vpais,
+            @RequestParam(name = "tipo", required = false , defaultValue = "-1") int vtipo,
+            @RequestParam(name = "estado", required = false , defaultValue = "-1") int vestado){
+        List<Proveedor> lista = proveedorService.consultaDinamica(
+                        "%"+vnombre.toLowerCase()+"%", vdni, vpais,vtipo, vestado);
+        return ResponseEntity.ok(lista);
     }
 
-    // PUT: Actualizar existente
-    @PutMapping("/{id}")
-    public ResponseEntity<Proveedor> actualizar(@PathVariable Integer id, @RequestBody Proveedor proveedor) {
+    @DeleteMapping("/eliminaPorId/{id}")
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> elimina(@PathVariable("id") int idProveedor) {
+        Map<String, Object> salida = new HashMap<>();
         try {
-            return ResponseEntity.ok(proveedorService.actualizar(id, proveedor));
-        } catch (RuntimeException e) {
-            return ResponseEntity.notFound().build();
+            proveedorService.eliminaProveedor(idProveedor);
+            salida.put("mensaje","Se elimina el Proveedor de ID ==> " + idProveedor + "." );
+        } catch (Exception e) {
+            e.printStackTrace();
+            salida.put("mensaje", "No se eliminó, ya que el registro esta relacionado.");
         }
+        return ResponseEntity.ok(salida);
     }
 
-    // DELETE: Eliminar por ID
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminar(@PathVariable Integer id) {
-        proveedorService.eliminar(id);
-        return ResponseEntity.noContent().build();
+
+    @PutMapping("/actualizaProveedor")
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> actualiza(@RequestBody Proveedor obj) {
+        Map<String, Object> salida = new HashMap<>();
+        obj.setFechaRegistro(LocalDateTime.now());
+        obj.setFechaActualizacion(LocalDateTime.now());
+        Proveedor objSalida = proveedorService.insertaProveedor(obj);
+        salida.put("mensaje", "Proveedor actualizado exitosamente de ID >>>> " + objSalida.getIdProveedor());
+        return ResponseEntity.ok(salida);
     }
 
-    // GET: Consulta por teléfono mediante QueryMethod
-    @GetMapping("/telefono/qm/{telefono}")
-    public ResponseEntity<List<Proveedor>> buscarPorTelefonoQM(@PathVariable String telefono) {
-        return ResponseEntity.ok(proveedorService.buscarPorTelefonoQueryMethod(telefono));
+
+    @GetMapping("/grafico/pais")
+    public ResponseEntity<List<ProveedorPaisDTO>> graficoPais() {
+        List<ProveedorPaisDTO> lista = proveedorService.cantidadPorPais();
+        return ResponseEntity.ok(lista);
     }
 
-    // GET: Consulta por teléfono mediante JPQL
-    @GetMapping("/telefono/jpql/{telefono}")
-    public ResponseEntity<List<Proveedor>> buscarPorTelefonoJPQL(@PathVariable String telefono) {
-        return ResponseEntity.ok(proveedorService.buscarPorTelefonoJPQL(telefono));
+    @GetMapping("/grafico/estado")
+    public ResponseEntity<List<ProveedorEstadoDTO>> graficoEstado() {
+        List<ProveedorEstadoDTO> lista = proveedorService.cantidadPorEstado();
+        return ResponseEntity.ok(lista);
     }
 
-    // GET: Consulta por teléfono mediante Native Query
-    @GetMapping("/telefono/native/{telefono}")
-    public ResponseEntity<List<Proveedor>> buscarPorTelefonoNative(@PathVariable String telefono) {
-        return ResponseEntity.ok(proveedorService.buscarPorTelefonoNative(telefono));
+    @GetMapping("/grafico/tipo")
+    public ResponseEntity<List<ProveedorTipoDTO>> graficoTipo() {
+        List<ProveedorTipoDTO> lista = proveedorService.cantidadPorTipo();
+        return ResponseEntity.ok(lista);
+    }
+
+    @GetMapping("/grafico/mes")
+    public ResponseEntity<List<ProveedorMesDTO>> graficoMes() {
+        List<ProveedorMesDTO> lista = proveedorService.cantidadPorMes();
+        return ResponseEntity.ok(lista);
     }
 }

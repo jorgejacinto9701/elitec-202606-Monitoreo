@@ -1,10 +1,10 @@
 package com.empresa.repository;
 
-import com.empresa.entity.Pais;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
+import com.empresa.entity.Pais;
+
+
 public interface PaisRepository extends JpaRepository<Pais, Integer> {
-    // JpaRepository ya provee el método findAll()
+
 }

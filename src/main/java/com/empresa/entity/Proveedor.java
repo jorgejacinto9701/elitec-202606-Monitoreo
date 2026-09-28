@@ -1,29 +1,37 @@
 package com.empresa.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-import lombok.*;
-import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+import java.time.LocalDateTime;
+
+@Getter
+@Setter
 @Entity
 @Table(name = "proveedor")
-public class Proveedor implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class Proveedor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idProveedor")
-    private Integer idProveedor;
+    @Column(name = "idproveedor")
+    private int idProveedor;
+    private String nombre;
+    private String dni;
+    private LocalDateTime fechaRegistro;
+    private LocalDateTime fechaActualizacion;
+    private int estado;
 
-    @Column(name = "razonSocial", length = 100)
-    private String razonSocial;
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idTipo", nullable = false)
+    private DataCatalogo tipo;
 
-    @Column(name = "telefono", length = 20)
-    private String telefono;
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idpais")
+    private Pais pais;
 
-    @Column(name = "email", length = 100)
-    private String email;
+
 }

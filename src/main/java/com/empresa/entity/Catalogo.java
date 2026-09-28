@@ -21,6 +21,4 @@ public class Catalogo implements Serializable {
     @Column(name = "descripcion", columnDefinition = "TEXT")
     private String descripcion;
 
-    @Column(name = "estado", length = 45)
-    private String estado;
 }

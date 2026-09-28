@@ -1,28 +1,31 @@
 package com.empresa.entity;
 
-import jakarta.persistence.*;
-import lombok.*;
-import java.io.Serializable;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+import lombok.Getter;
+import lombok.Setter;
+@Getter
+@Setter
 @Entity
 @Table(name = "rol_has_opcion")
-public class RolHasOpcion implements Serializable {
+public class RolHasOpcion {
 
-    private static final long serialVersionUID = 1L;
+	
+	@EmbeddedId
+	private RolHasOpcionPK rolHasOpcionPK;
 
-    @EmbeddedId
-    private RolHasOpcionId id;
+	@ManyToOne
+	@JoinColumn(name = "idRol", nullable = false, insertable = false, updatable = false)
+	private Rol rol;
+	
+	@ManyToOne
+	@JoinColumn(name = "idOpcion", nullable = false, insertable = false, updatable = false)
+	private Opcion opcion;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("idrol")
-    @JoinColumn(name = "idrol")
-    private Rol rol;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("idopcion")
-    @JoinColumn(name = "idopcion")
-    private Opcion opcion;
+	
+	
 }
