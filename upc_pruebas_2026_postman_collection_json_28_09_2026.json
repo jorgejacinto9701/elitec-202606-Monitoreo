@@ -1,0 +1,349 @@
+{
+  "info": {
+    "_postman_id": "c33fdeaa-a393-48b3-8409-2340021d3b29",
+    "name": "UPC-PRUEBAS-2026",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "9424771",
+    "_collection_link": "https://go.postman.co/collection/9424771-c33fdeaa-a393-48b3-8409-2340021d3b29?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"login\": \"luis\",\r\n    \"password\": \"2026\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8091/api/auth/login",
+          "host": [
+            "localhost"
+          ],
+          "port": "8091",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Lista paises",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWlzIiwib3BjaW9uZXMiOlt7ImlkT3BjaW9uIjoxLCJub21icmUiOiJSZWdpc3RybyBBbHVtbm8iLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJBbHVtbm8iLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjoyLCJub21icmUiOiJSZWdpc3RybyBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhckxpYnJvIiwidGlwbyI6MX0seyJpZE9wY2lvbiI6Mywibm9tYnJlIjoiUmVnaXN0cm8gVGVzaXMiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJUZXNpcyIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjQsIm5vbWJyZSI6IlJlZ2lzdHJvIEF1dG9yIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyQXV0b3IiLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjo1LCJub21icmUiOiJSZWdpc3RybyBTYWxhIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyU2FsYSIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjYsIm5vbWJyZSI6IlJlZ2lzdHJvIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhclByb3ZlZWRvciIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjcsIm5vbWJyZSI6IkNydWQgQWx1bW5vIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJjcnVkQWx1bW5vIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OCwibm9tYnJlIjoiQ3J1ZCBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZExpYnJvIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OSwibm9tYnJlIjoiQ3J1ZCBUZXNpcyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZFRlc2lzIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTAsIm5vbWJyZSI6IkNydWQgQXV0b3IiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRBdXRvciIsInRpcG8iOjN9LHsiaWRPcGNpb24iOjExLCJub21icmUiOiJDcnVkIFNhbGEiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRTYWxhIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTIsIm5vbWJyZSI6IkNydWQgUHJvdmVlZG9yIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJjcnVkUHJvdmVlZG9yIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTMsIm5vbWJyZSI6IkNvbnN1bHRhIEFsdW1ubyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY29uc3VsdGFBbHVtbm8iLCJ0aXBvIjoyfSx7ImlkT3BjaW9uIjoxNCwibm9tYnJlIjoiQ29uc3VsdGEgTGlicm8iLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNvbnN1bHRhTGlicm8iLCJ0aXBvIjoyfSx7ImlkT3BjaW9uIjoxNSwibm9tYnJlIjoiQ29uc3VsdGEgVGVzaXMiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNvbnN1bHRhVGVzaXMiLCJ0aXBvIjoyfSx7ImlkT3BjaW9uIjoxNiwibm9tYnJlIjoiQ29uc3VsdGEgQXV0b3IiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNvbnN1bHRhQXV0b3IiLCJ0aXBvIjoyfSx7ImlkT3BjaW9uIjoxNywibm9tYnJlIjoiQ29uc3VsdGEgU2FsYSIsImVzdGFkbyI6IjEiLCJydXRhIjoiY29uc3VsdGFTYWxhIiwidGlwbyI6Mn0seyJpZE9wY2lvbiI6MTgsIm5vbWJyZSI6IkNvbnN1bHRhIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiY29uc3VsdGFQcm92ZWVkb3IiLCJ0aXBvIjoyfSx7ImlkT3BjaW9uIjoxOSwibm9tYnJlIjoiUHLDqXN0YW1vIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJwcmVzdGFtbyIsInRpcG8iOjR9LHsiaWRPcGNpb24iOjIwLCJub21icmUiOiJEZXZvbHVjacOzbiIsImVzdGFkbyI6IjEiLCJydXRhIjoiZGV2b2x1Y2lvbiIsInRpcG8iOjR9LHsiaWRPcGNpb24iOjIxLCJub21icmUiOiJSZWdpc3RybyBQcnVlYmEiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJQcnVlYmEiLCJ0aXBvIjoxfV0sImlkVXN1YXJpbyI6MSwicm9sZXMiOlsiQmlibGlvdGVjb2xvZ28iXSwibm9tYnJlQ29tcGxldG8iOiJMdWlzIEFsYmVydG8gU2FuY2hleiBRdWlzcGUgIiwibG9naW4iOiJsdWlzIiwiZXhwIjoxNzkwNjEwMTY5LCJpYXQiOjE3OTA1NzQxNjl9.4rRlQT4u2vS_b3YuCINhpeIEmtUvZYYBVP6mZmMPGSouObPj7gg1-eVJ5k9xPUAMmGq---kLaEgF01TeCVnApw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8091/api/util/listaPais",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8091",
+          "path": [
+            "api",
+            "util",
+            "listaPais"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Lista Catalogo Categoria de Libro",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWlzIiwib3BjaW9uZXMiOlt7ImlkT3BjaW9uIjoxLCJub21icmUiOiJSZWdpc3RybyBBbHVtbm8iLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJBbHVtbm8iLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjoyLCJub21icmUiOiJSZWdpc3RybyBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhckxpYnJvIiwidGlwbyI6MX0seyJpZE9wY2lvbiI6Mywibm9tYnJlIjoiUmVnaXN0cm8gVGVzaXMiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJUZXNpcyIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjQsIm5vbWJyZSI6IlJlZ2lzdHJvIEF1dG9yIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyQXV0b3IiLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjo1LCJub21icmUiOiJSZWdpc3RybyBTYWxhIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyU2FsYSIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjYsIm5vbWJyZSI6IlJlZ2lzdHJvIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhclByb3ZlZWRvciIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjcsIm5vbWJyZSI6IkNydWQgQWx1bW5vIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJjcnVkQWx1bW5vIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OCwibm9tYnJlIjoiQ3J1ZCBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZExpYnJvIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OSwibm9tYnJlIjoiQ3J1ZCBUZXNpcyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZFRlc2lzIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTAsIm5vbWJyZSI6IkNydWQgQXV0b3IiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRBdXRvciIsInRpcG8iOjN9LHsiaWRPcGNpb24iOjExLCJub21icmUiOiJDcnVkIFNhbGEiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRTYWxhIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTIsIm5vbWJyZSI6IkNydWQgUHJvdmVlZG9yIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJjcnVkUHJvdmVlZG9yIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTMsIm5vbWJyZSI6IkNvbnN1bHRhIEFsdW1ubyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY29uc3VsdGFBbHVtbm8iLCJ0aXBvIjoyfSx7ImlkT3BjaW9uIjoxNCwibm9tYnJlIjoiQ29uc3VsdGEgTGlicm8iLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNvbnN1bHRhTGlicm8iLCJ0aXBvIjoyfSx7ImlkT3BjaW9uIjoxNSwibm9tYnJlIjoiQ29uc3VsdGEgVGVzaXMiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNvbnN1bHRhVGVzaXMiLCJ0aXBvIjoyfSx7ImlkT3BjaW9uIjoxNiwibm9tYnJlIjoiQ29uc3VsdGEgQXV0b3IiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNvbnN1bHRhQXV0b3IiLCJ0aXBvIjoyfSx7ImlkT3BjaW9uIjoxNywibm9tYnJlIjoiQ29uc3VsdGEgU2FsYSIsImVzdGFkbyI6IjEiLCJydXRhIjoiY29uc3VsdGFTYWxhIiwidGlwbyI6Mn0seyJpZE9wY2lvbiI6MTgsIm5vbWJyZSI6IkNvbnN1bHRhIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiY29uc3VsdGFQcm92ZWVkb3IiLCJ0aXBvIjoyfSx7ImlkT3BjaW9uIjoxOSwibm9tYnJlIjoiUHLDqXN0YW1vIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJwcmVzdGFtbyIsInRpcG8iOjR9LHsiaWRPcGNpb24iOjIwLCJub21icmUiOiJEZXZvbHVjacOzbiIsImVzdGFkbyI6IjEiLCJydXRhIjoiZGV2b2x1Y2lvbiIsInRpcG8iOjR9LHsiaWRPcGNpb24iOjIxLCJub21icmUiOiJSZWdpc3RybyBQcnVlYmEiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJQcnVlYmEiLCJ0aXBvIjoxfV0sImlkVXN1YXJpbyI6MSwicm9sZXMiOlsiQmlibGlvdGVjb2xvZ28iXSwibm9tYnJlQ29tcGxldG8iOiJMdWlzIEFsYmVydG8gU2FuY2hleiBRdWlzcGUgIiwibG9naW4iOiJsdWlzIiwiZXhwIjoxNzkwNjEwMTY5LCJpYXQiOjE3OTA1NzQxNjl9.4rRlQT4u2vS_b3YuCINhpeIEmtUvZYYBVP6mZmMPGSouObPj7gg1-eVJ5k9xPUAMmGq---kLaEgF01TeCVnApw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8091/api/util/listaCategoriaDeLibro",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8091",
+          "path": [
+            "api",
+            "util",
+            "listaCategoriaDeLibro"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Lista producto",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWlzIiwib3BjaW9uZXMiOlt7ImlkT3BjaW9uIjoxLCJub21icmUiOiJSZWdpc3RybyBBbHVtbm8iLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJBbHVtbm8iLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjoyLCJub21icmUiOiJSZWdpc3RybyBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhckxpYnJvIiwidGlwbyI6MX0seyJpZE9wY2lvbiI6Mywibm9tYnJlIjoiUmVnaXN0cm8gVGVzaXMiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJUZXNpcyIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjQsIm5vbWJyZSI6IlJlZ2lzdHJvIEF1dG9yIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyQXV0b3IiLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjo1LCJub21icmUiOiJSZWdpc3RybyBTYWxhIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyU2FsYSIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjYsIm5vbWJyZSI6IlJlZ2lzdHJvIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhclByb3ZlZWRvciIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjcsIm5vbWJyZSI6IkNydWQgQWx1bW5vIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJjcnVkQWx1bW5vIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OCwibm9tYnJlIjoiQ3J1ZCBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZExpYnJvIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OSwibm9tYnJlIjoiQ3J1ZCBUZXNpcyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZFRlc2lzIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTAsIm5vbWJyZSI6IkNydWQgQXV0b3IiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRBdXRvciIsInRpcG8iOjN9LHsiaWRPcGNpb24iOjExLCJub21icmUiOiJDcnVkIFNhbGEiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRTYWxhIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTIsIm5vbWJyZSI6IkNvbnN1bHRhIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiY29uc3VsdGFQcm92ZWVkb3IiLCJ0aXBvIjoyfSx7ImlkT3BjaW9uIjoxOSwibm9tYnJlIjoiUHLDqXN0YW1vIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJwcmVzdGFtbyIsInRpcG8iOjR9LHsiaWRPcGNpb24iOjIwLCJub21icmUiOiJEZXZvbHVjacOzbiIsImVzdGFkbyI6IjEiLCJydXRhIjoiZGV2b2x1Y2lvbiIsInRpcG8iOjR9LHsiaWRPcGNpb24iOjIxLCJub21icmUiOiJSZWdpc3RybyBQcnVlYmEiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJQcnVlYmEiLCJ0aXBvIjoxfV0sImlkVXN1YXJpbyI6MSwicm9sZXMiOlsiQmlibGlvdGVjb2xvZ28iXSwibm9tYnJlQ29tcGxldG8iOiJMdWlzIEFsYmVydG8gU2FuY2hleiBRdWlzcGUgIiwibG9naW4iOiJsdWlzIiwiZXhwIjoxNzkwNjEwMTY5LCJpYXQiOjE3OTA1NzQxNjl9.4rRlQT4u2vS_b3YuCINhpeIEmtUvZYYBVP6mZmMPGSouObPj7gg1-eVJ5k9xPUAMmGq---kLaEgF01TeCVnApw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8091/api/producto/porId/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8091",
+          "path": [
+            "api",
+            "producto",
+            "porId",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Revistas",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWlzIiwib3BjaW9uZXMiOlt7ImlkT3BjaW9uIjoxLCJub21icmUiOiJSZWdpc3RybyBBbHVtbm8iLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJBbHVtbm8iLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjoyLCJub21icmUiOiJSZWdpc3RybyBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhckxpYnJvIiwidGlwbyI6MX0seyJpZE9wY2lvbiI6Mywibm9tYnJlIjoiUmVnaXN0cm8gVGVzaXMiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJUZXNpcyIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjQsIm5vbWJyZSI6IlJlZ2lzdHJvIEF1dG9yIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyQXV0b3IiLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjo1LCJub21icmUiOiJSZWdpc3RybyBTYWxhIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyU2FsYSIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjYsIm5vbWJyZSI6IlJlZ2lzdHJvIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhclByb3ZlZWRvciIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjcsIm5vbWJyZSI6IkNydWQgQWx1bW5vIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJjcnVkQWx1bW5vIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OCwibm9tYnJlIjoiQ3J1ZCBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZExpYnJvIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OSwibm9tYnJlIjoiQ3J1ZCBUZXNpcyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZFRlc2lzIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTAsIm5vbWJyZSI6IkNydWQgQXV0b3IiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRBdXRvciIsInRpcG8iOjN9LHsiaWRPcGNpb24iOjExLCJub21icmUiOiJDcnVkIFNhbGEiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRTYWxhIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTIsIm5vbWJyZSI6IkNvbnN1bHRhIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiY29uc3VsdGFQcm92ZWVkb3IiLCJ0aXBvIjoyfSx7ImlkT3BjaW9uIjoxOSwibm9tYnJlIjoiUHLDqXN0YW1vIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJwcmVzdGFtbyIsInRpcG8iOjR9LHsiaWRPcGNpb24iOjIwLCJub21icmUiOiJEZXZvbHVjacOzbiIsImVzdGFkbyI6IjEiLCJydXRhIjoiZGV2b2x1Y2lvbiIsInRpcG8iOjR9LHsiaWRPcGNpb24iOjIxLCJub21icmUiOiJSZWdpc3RybyBQcnVlYmEiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJQcnVlYmEiLCJ0aXBvIjoxfV0sImlkVXN1YXJpbyI6MSwicm9sZXMiOlsiQmlibGlvdGVjb2xvZ28iXSwibm9tYnJlQ29tcGxldG8iOiJMdWlzIEFsYmVydG8gU2FuY2hleiBRdWlzcGUgIiwibG9naW4iOiJsdWlzIiwiZXhwIjoxNzkwNjEwMTY5LCJpYXQiOjE3OTA1NzQxNjl9.4rRlQT4u2vS_b3YuCINhpeIEmtUvZYYBVP6mZmMPGSouObPj7gg1-eVJ5k9xPUAMmGq---kLaEgF01TeCVnApw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8091/api/revistas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8091",
+          "path": [
+            "api",
+            "revistas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obtener Revista por ID",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWlzIiwib3BjaW9uZXMiOlt7ImlkT3BjaW9uIjoxLCJub21icmUiOiJSZWdpc3RybyBBbHVtbm8iLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJBbHVtbm8iLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjoyLCJub21icmUiOiJSZWdpc3RybyBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhckxpYnJvIiwidGlwbyI6MX0seyJpZE9wY2lvbiI6Mywibm9tYnJlIjoiUmVnaXN0cm8gVGVzaXMiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJUZXNpcyIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjQsIm5vbWJyZSI6IlJlZ2lzdHJvIEF1dG9yIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyQXV0b3IiLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjo1LCJub21icmUiOiJSZWdpc3RybyBTYWxhIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyU2FsYSIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjYsIm5vbWJyZSI6IlJlZ2lzdHJvIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhclByb3ZlZWRvciIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjcsIm5vbWJyZSI6IkNydWQgQWx1bW5vIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJjcnVkQWx1bW5vIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OCwibm9tYnJlIjoiQ3J1ZCBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZExpYnJvIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OSwibm9tYnJlIjoiQ3J1ZCBUZXNpcyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZFRlc2lzIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTAsIm5vbWJyZSI6IkNydWQgQXV0b3IiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRBdXRvciIsInRpcG8iOjN9LHsiaWRPcGNpb24iOjExLCJub21icmUiOiJDcnVkIFNhbGEiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRTYWxhIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTIsIm5vbWJyZSI6IkNvbnN1bHRhIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZFByb3ZlZWRvciIsInRpcG8iOjJ9LHsiaWRPcGNpb24iOjE5LCJub21icmUiOiJQcsOpc3RhbW8iLCJlc3RhZG8iOiIxIiwicnV0YSI6InByZXN0YW1vIiwidGlwbyI6NH0seyJpZE9wY2lvbiI6MjAsIm5vbWJyZSI6IkRldm9sdWNpw7NuIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJkZXZvbHVjaW9uIiwidGlwbyI6NH0seyJpZE9wY2lvbiI6MjEsIm5vbWJyZSI6IlJlZ2lzdHJvIFBydWViYSIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhclBydWViYSIsInRpcG8iOjF9XSwiaWRVc3VhcmlvIjoxLCJyb2xlcyI6WyJCaWJsaW90ZWNvbG9nbyJdLCJub21icmVDb21wbGV0byI6Ikx1aXMgQWxiZXJ0byBTYW5jaGV6IFF1aXNwZSAiLCJsb2dpbiI6Imx1aXMiLCJleHAiOjE3OTA2MTAxNjksImlhdCI6MTc5MDU3NDE2OX0.4rRlQT4u2vS_b3YuCINhpeIEmtUvZYYBVP6mZmMPGSouObPj7gg1-eVJ5k9xPUAMmGq---kLaEgF01TeCVnApw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8091/api/revistas/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8091",
+          "path": [
+            "api",
+            "revistas",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Registrar Revista",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWlzIiwib3BjaW9uZXMiOlt7ImlkT3BjaW9uIjoxLCJub21icmUiOiJSZWdpc3RybyBBbHVtbm8iLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJBbHVtbm8iLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjoyLCJub21icmUiOiJSZWdpc3RybyBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhckxpYnJvIiwidGlwbyI6MX0seyJpZE9wY2lvbiI6Mywibm9tYnJlIjoiUmVnaXN0cm8gVGVzaXMiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJUZXNpcyIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjQsIm5vbWJyZSI6IlJlZ2lzdHJvIEF1dG9yIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyQXV0b3IiLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjo1LCJub21icmUiOiJSZWdpc3RybyBTYWxhIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyU2FsYSIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjYsIm5vbWJyZSI6IlJlZ2lzdHJvIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhclByb3ZlZWRvciIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjcsIm5vbWJyZSI6IkNydWQgQWx1bW5vIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJjcnVkQWx1bW5vIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OCwibm9tYnJlIjoiQ3J1ZCBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZExpYnJvIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OSwibm9tYnJlIjoiQ3J1ZCBUZXNpcyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZFRlc2lzIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTAsIm5vbWJyZSI6IkNydWQgQXV0b3IiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRBdXRvciIsInRpcG8iOjN9LHsiaWRPcGNpb24iOjExLCJub21icmUiOiJDcnVkIFNhbGEiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRTYWxhIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTIsIm5vbWJyZSI6IkNvbnN1bHRhIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZFByb3ZlZWRvciIsInRpcG8iOjJ9LHsiaWRPcGNpb24iOjE5LCJub21icmUiOiJQcsOpc3RhbW8iLCJlc3RhZG8iOiIxIiwicnV0YSI6InByZXN0YW1vIiwidGlwbyI6NH0seyJpZE9wY2lvbiI6MjAsIm5vbWJyZSI6IkRldm9sdWNpw7NuIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJkZXZvbHVjaW9uIiwidGlwbyI6NH0seyJpZE9wY2lvbiI6MjEsIm5vbWJyZSI6IlJlZ2lzdHJvIFBydWViYSIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhclBydWViYSIsInRpcG8iOjF9XSwiaWRVc3VhcmlvIjoxLCJyb2xlcyI6WyJCaWJsaW90ZWNvbG9nbyJdLCJub21icmVDb21wbGV0byI6Ikx1aXMgQWxiZXJ0byBTYW5jaGV6IFF1aXNwZSAiLCJsb2dpbiI6Imx1aXMiLCJleHAiOjE3OTA2MTAxNjksImlhdCI6MTc5MDU3NDE2OX0.4rRlQT4u2vS_b3YuCINhpeIEmtUvZYYBVP6mZmMPGSouObPj7gg1-eVJ5k9xPUAMmGq---kLaEgF01TeCVnApw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"National Geographic\",\r\n  \"fechaCreacion\": \"2024-01-15\",\r\n  \"estado\": 1,\r\n  \"pais\": {\r\n    \"idPais\": 1\r\n  },\r\n  \"tipoRevista\": {\r\n    \"idDataCatalogo\": 15\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8091/api/revistas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8091",
+          "path": [
+            "api",
+            "revistas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar Revista",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWlzIiwib3BjaW9uZXMiOlt7ImlkT3BjaW9uIjoxLCJub21icmUiOiJSZWdpc3RybyBBbHVtbm8iLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJBbHVtbm8iLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjoyLCJub21icmUiOiJSZWdpc3RybyBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhckxpYnJvIiwidGlwbyI6MX0seyJpZE9wY2lvbiI6Mywibm9tYnJlIjoiUmVnaXN0cm8gVGVzaXMiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJUZXNpcyIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjQsIm5vbWJyZSI6IlJlZ2lzdHJvIEF1dG9yIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyQXV0b3IiLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjo1LCJub21icmUiOiJSZWdpc3RybyBTYWxhIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyU2FsYSIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjYsIm5vbWJyZSI6IlJlZ2lzdHJvIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhclByb3ZlZWRvciIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjcsIm5vbWJyZSI6IkNydWQgQWx1bW5vIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJjcnVkQWx1bW5vIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OCwibm9tYnJlIjoiQ3J1ZCBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZExpYnJvIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OSwibm9tYnJlIjoiQ3J1ZCBUZXNpcyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZFRlc2lzIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTAsIm5vbWJyZSI6IkNydWQgQXV0b3IiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRBdXRvciIsInRpcG8iOjN9LHsiaWRPcGNpb24iOjExLCJub21icmUiOiJDcnVkIFNhbGEiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRTYWxhIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTIsIm5vbWJyZSI6IkNvbnN1bHRhIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZFByb3ZlZWRvciIsInRpcG8iOjJ9LHsiaWRPcGNpb24iOjE5LCJub21icmUiOiJQcsOpc3RhbW8iLCJlc3RhZG8iOiIxIiwicnV0YSI6InByZXN0YW1vIiwidGlwbyI6NH0seyJpZE9wY2lvbiI6MjAsIm5vbWJyZSI6IkRldm9sdWNpw7NuIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJkZXZvbHVjaW9uIiwidGlwbyI6NH0seyJpZE9wY2lvbiI6MjEsIm5vbWJyZSI6IlJlZ2lzdHJvIFBydWViYSIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhclBydWViYSIsInRpcG8iOjF9XSwiaWRVc3VhcmlvIjoxLCJyb2xlcyI6WyJCaWJsaW90ZWNvbG9nbyJdLCJub21icmVDb21wbGV0byI6Ikx1aXMgQWxiZXJ0byBTYW5jaGV6IFF1aXNwZSAiLCJsb2dpbiI6Imx1aXMiLCJleHAiOjE3OTA2MTAxNjksImlhdCI6MTc5MDU3NDE2OX0.4rRlQT4u2vS_b3YuCINhpeIEmtUvZYYBVP6mZmMPGSouObPj7gg1-eVJ5k9xPUAMmGq---kLaEgF01TeCVnApw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"National Geographic - Edición Especial\",\r\n  \"fechaCreacion\": \"2024-01-15\",\r\n  \"estado\": 1,\r\n  \"pais\": {\r\n    \"idPais\": 1\r\n  },\r\n  \"tipoRevista\": {\r\n    \"idDataCatalogo\": 16\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8091/api/revistas/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8091",
+          "path": [
+            "api",
+            "revistas",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar Revista",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWlzIiwib3BjaW9uZXMiOlt7ImlkT3BjaW9uIjoxLCJub21icmUiOiJSZWdpc3RybyBBbHVtbm8iLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJBbHVtbm8iLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjoyLCJub21icmUiOiJSZWdpc3RybyBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhckxpYnJvIiwidGlwbyI6MX0seyJpZE9wY2lvbiI6Mywibm9tYnJlIjoiUmVnaXN0cm8gVGVzaXMiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJUZXNpcyIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjQsIm5vbWJyZSI6IlJlZ2lzdHJvIEF1dG9yIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyQXV0b3IiLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjo1LCJub21icmUiOiJSZWdpc3RybyBTYWxhIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyU2FsYSIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjYsIm5vbWJyZSI6IlJlZ2lzdHJvIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhclByb3ZlZWRvciIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjcsIm5vbWJyZSI6IkNydWQgQWx1bW5vIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJjcnVkQWx1bW5vIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OCwibm9tYnJlIjoiQ3J1ZCBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZExpYnJvIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OSwibm9tYnJlIjoiQ3J1ZCBUZXNpcyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZFRlc2lzIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTAsIm5vbWJyZSI6IkNydWQgQXV0b3IiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRBdXRvciIsInRpcG8iOjN9LHsiaWRPcGNpb24iOjExLCJub21icmUiOiJDcnVkIFNhbGEiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRTYWxhIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTIsIm5vbWJyZSI6IkNvbnN1bHRhIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZFByb3ZlZWRvciIsInRpcG8iOjJ9LHsiaWRPcGNpb24iOjE5LCJub21icmUiOiJQcsOpc3RhbW8iLCJlc3RhZG8iOiIxIiwicnV0YSI6InByZXN0YW1vIiwidGlwbyI6NH0seyJpZE9wY2lvbiI6MjAsIm5vbWJyZSI6IkRldm9sdWNpw7NuIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJkZXZvbHVjaW9uIiwidGlwbyI6NH0seyJpZE9wY2lvbiI6MjEsIm5vbWJyZSI6IlJlZ2lzdHJvIFBydWViYSIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhclBydWViYSIsInRpcG8iOjF9XSwiaWRVc3VhcmlvIjoxLCJyb2xlcyI6WyJCaWJsaW90ZWNvbG9nbyJdLCJub21icmVDb21wbGV0byI6Ikx1aXMgQWxiZXJ0byBTYW1jaGV6IFF1aXNwZSAiLCJsb2dpbiI6Imx1aXMiLCJleHAiOjE3OTA2MTAxNjksImlhdCI6MTc5MDU3NDE2OX0.4rRlQT4u2vS_b3YuCINhpeIEmtUvZYYBVP6mZmMPGSouObPj7gg1-eVJ5k9xPUAMmGq---kLaEgF01TeCVnApw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8091/api/revistas/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8091",
+          "path": [
+            "api",
+            "revistas",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar Revistas por Rango Fecha Creación",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWlzIiwib3BjaW9uZXMiOlt7ImlkT3BjaW9uIjoxLCJub21icmUiOiJSZWdpc3RybyBBbHVtbm8iLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJBbHVtbm8iLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjoyLCJub21icmUiOiJSZWdpc3RybyBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhckxpYnJvIiwidGlwbyI6MX0seyJpZE9wY2lvbiI6Mywibm9tYnJlIjoiUmVnaXN0cm8gVGVzaXMiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImFncmVnYXJUZXNpcyIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjQsIm5vbWJyZSI6IlJlZ2lzdHJvIEF1dG9yIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyQXV0b3IiLCJ0aXBvIjoxfSx7ImlkT3BjaW9uIjo1LCJub21icmUiOiJSZWdpc3RybyBTYWxhIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJhZ3JlZ2FyU2FsYSIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjYsIm5vbWJyZSI6IlJlZ2lzdHJvIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhclByb3ZlZWRvciIsInRpcG8iOjF9LHsiaWRPcGNpb24iOjcsIm5vbWJyZSI6IkNydWQgQWx1bW5vIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJjcnVkQWx1bW5vIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OCwibm9tYnJlIjoiQ3J1ZCBMaWJybyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZExpYnJvIiwidGlwbyI6M30seyJpZE9wY2lvbiI6OSwibm9tYnJlIjoiQ3J1ZCBUZXNpcyIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZFRlc2lzIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTAsIm5vbWJyZSI6IkNydWQgQXV0b3IiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRBdXRvciIsInRpcG8iOjN9LHsiaWRPcGNpb24iOjExLCJub21icmUiOiJDcnVkIFNhbGEiLCJlc3RhZG8iOiIxIiwicnV0YSI6ImNydWRTYWxhIiwidGlwbyI6M30seyJpZE9wY2lvbiI6MTIsIm5vbWJyZSI6IkNvbnN1bHRhIFByb3ZlZWRvciIsImVzdGFkbyI6IjEiLCJydXRhIjoiY3J1ZFByb3ZlZWRvciIsInRpcG8iOjJ9LHsiaWRPcGNpb24iOjE5LCJub21icmUiOiJQcsOpc3RhbW8iLCJlc3RhZG8iOiIxIiwicnV0YSI6InByZXN0YW1vIiwidGlwbyI6NH0seyJpZE9wY2lvbiI6MjAsIm5vbWJyZSI6IkRldm9sdWNpw7NuIiwiZXN0YWRvIjoiMSIsInJ1dGEiOiJkZXZvbHVjaW9uIiwidGlwbyI6NH0seyJpZE9wY2lvbiI6MjEsIm5vbWJyZSI6IlJlZ2lzdHJvIFBydWViYSIsImVzdGFkbyI6IjEiLCJydXRhIjoiYWdyZWdhclBydWViYSIsInRpcG8iOjF9XSwiaWRVc3VhcmlvIjoxLCJyb2xlcyI6WyJCaWJsaW90ZWNvbG9nbyJdLCJub21icmVDb21wbGV0byI6Ikx1aXMgQWxiZXJ0byBTYW5jaGV6IFF1aXNwZSAiLCJsb2dpbiI6Imx1aXMiLCJleHAiOjE3OTA2MTAxNjksImlhdCI6MTc5MDU3NDE2OX0.4rRlQT4u2vS_b3YuCINhpeIEmtUvZYYBVP6mZmMPGSouObPj7gg1-eVJ5k9xPUAMmGq---kLaEgF01TeCVnApw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8091/api/revistas/por-fecha-creacion?inicio=2020-01-01&fin=2024-12-31",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8091",
+          "path": [
+            "api",
+            "revistas",
+            "por-fecha-creacion"
+          ],
+          "query": [
+            {
+              "key": "inicio",
+              "value": "2020-01-01"
+            },
+            {
+              "key": "fin",
+              "value": "2024-12-31"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
