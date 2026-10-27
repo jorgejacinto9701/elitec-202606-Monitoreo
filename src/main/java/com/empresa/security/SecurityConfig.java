@@ -54,6 +54,7 @@ public class SecurityConfig   {
         .authorizeHttpRequests(
         		auth -> auth.requestMatchers("/api/auth/**").permitAll()
         					.requestMatchers("/api/revistas/**").permitAll()
+        					.requestMatchers("/api/plato/**").permitAll()
         .anyRequest()
         .authenticated());
         
