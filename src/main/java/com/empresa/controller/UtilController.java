@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.empresa.entity.Categoria;
 import com.empresa.entity.DataCatalogo;
 import com.empresa.entity.Deporte;
 import com.empresa.entity.Pais;
+import com.empresa.service.CategoriaService;
 import com.empresa.service.DataCatalogoService;
 import com.empresa.service.DeporteService;
 import com.empresa.service.PaisService;
@@ -26,7 +28,7 @@ public class UtilController {
 	private final PaisService paisService;
 	private final DataCatalogoService dataCatalogoService;
 	private final DeporteService deporteService;
-
+	private final CategoriaService categoriaService;
 
 	@GetMapping("/listaPais")
 	@ResponseBody
@@ -84,10 +86,15 @@ public class UtilController {
 
 
 	@GetMapping("/listaDeporte")
-	public ResponseEntity<List<Deporte>> listaTodos(){
+	public ResponseEntity<List<Deporte>> listaDeporte(){
 		List<Deporte> lista = deporteService.listaTodos();
 		return ResponseEntity.ok(lista);
 	}
-
+	
+	@GetMapping("/listaCategoriaDeProducto")
+	public ResponseEntity<List<Categoria>> listaCategoriaDeProducto(){
+		List<Categoria> lista = categoriaService.listaTodos();
+		return ResponseEntity.ok(lista);
+	}
 
 }
