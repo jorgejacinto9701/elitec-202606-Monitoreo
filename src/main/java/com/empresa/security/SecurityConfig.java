@@ -55,6 +55,9 @@ public class SecurityConfig   {
         		auth -> auth.requestMatchers("/api/auth/**").permitAll()
         					.requestMatchers("/api/revistas/**").permitAll()
         					.requestMatchers("/api/plato/**").permitAll()
+        					.requestMatchers("/api/producto/**").permitAll()
+        					.requestMatchers("/api/util/**").permitAll()
+        					.requestMatchers("/api/modalidad/**").permitAll()
         .anyRequest()
         .authenticated());
         
