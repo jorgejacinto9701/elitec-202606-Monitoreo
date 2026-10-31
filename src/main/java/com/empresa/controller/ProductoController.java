@@ -1,8 +1,8 @@
 package com.empresa.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -43,9 +43,12 @@ public class ProductoController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Producto> guardar(@RequestBody Producto obj) {
-		Producto objRegistrado = productoService.guardar(obj);
-		return new ResponseEntity<>(objRegistrado, HttpStatus.CREATED);
+	public ResponseEntity<?> guardar(@RequestBody Producto obj) {
+		Producto objSalida = productoService.guardar(obj);
+		HashMap<String, Object> salida = new HashMap<>();
+        salida.put("data", objSalida);
+        salida.put("mensaje", "Registro exitoso con ID ==> " + objSalida.getIdProducto());
+        return ResponseEntity.ok(salida);
 	}
 	
 	@PutMapping("/{id}")
