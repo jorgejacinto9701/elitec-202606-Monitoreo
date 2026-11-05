@@ -60,6 +60,7 @@ public class SecurityConfig   {
         					.requestMatchers("/api/modalidad/**").permitAll()
         					.requestMatchers("/api/docente/**").permitAll()
         					.requestMatchers("/api/ubigeo/**").permitAll()
+							.requestMatchers("/api/autor/**").permitAll()        					
         .anyRequest()
         .authenticated());
         
