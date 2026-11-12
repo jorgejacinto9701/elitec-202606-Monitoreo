@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/revistas")
+@CrossOrigin("http://localhost:4200")
 @RequiredArgsConstructor
 public class RevistaController {
 
