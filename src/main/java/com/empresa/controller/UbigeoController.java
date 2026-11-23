@@ -2,6 +2,7 @@ package com.empresa.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api/ubigeo")
 @RequiredArgsConstructor
+@CrossOrigin("http://localhost:4200")
 public class UbigeoController {
 
     private final UbigeoService service;
